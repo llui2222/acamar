@@ -17,6 +17,12 @@ public class Task1 {
      * @return - the length of the last word in the string.
      */
     public int lengthOfLastWord(String str) {
-        return 0;
+        if(str == null){
+            throw new IllegalArgumentException("The string is null but shouldn't!");
+        }
+        int lastWordLen = 0;
+        str=str.trim();
+        for (int i = str.length() - 1; i >= 0 && str.charAt(i)!=' '; i--, lastWordLen++);
+        return lastWordLen;
     }
 }
